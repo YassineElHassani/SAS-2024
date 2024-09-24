@@ -11,8 +11,8 @@ int main() {
     printf("Enter the theerd number: ");
     scanf("%d", &c);
 
-    int x = pow(a * b * c, 1/3);
-    printf("Moyenne geometric: %d", x);
+    float x = pow(a * b * c, 1/3);
+    printf("Moyenne geometric: %f", x);
 
     return 0;
 }
