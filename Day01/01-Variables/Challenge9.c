@@ -2,14 +2,26 @@
 #include <math.h>
 
 int main() {
-    int x,y,z;
+    int x2,x1,y1,y2,z1,z2;
 
-    printf("Enter the first number: ");
-    scanf("%d", &x);
-    printf("Enter the second number: ");
-    scanf("%d", &y);
-    printf("Enter the theerd number: ");
-    scanf("%d", &z);
+    printf("Enter x1: ");
+    scanf("%d", &x1);
+    printf("Enter x2: ");
+    scanf("%d", &x2);
+    printf("Enter y1: ");
+    scanf("%d", &y1);
+    printf("Enter y2: ");
+    scanf("%d", &y2);
+    printf("Enter z1: ");
+    scanf("%d", &z1);
+    printf("Enter z2: ");
+    scanf("%d", &z2);
 
-    int add = sqrt(pow((x+2 - x+1) + (y+2 - y+1) + (z+2 - z+1)));
+    int xpow = pow(x1 - x2, 2);
+    int ypow = pow(y1 - y2, 2);
+    int zpow = pow(z1 - z2, 2);
+
+    int distance = sqrt(xpow + ypow + zpow);
+
+    printf("Distance = %d", distance);
 }
