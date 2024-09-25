@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+void main() {
     int x2,x1,y1,y2,z1,z2;
 
     printf("Enter x1: ");
@@ -24,4 +24,5 @@ int main() {
     int distance = sqrt(xpow + ypow + zpow);
 
     printf("Distance = %d", distance);
+    
 }

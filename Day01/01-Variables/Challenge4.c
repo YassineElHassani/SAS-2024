@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     float KiloPerHour, MeterPerSec;
 
     printf("km/h: ");
@@ -8,5 +8,4 @@ int main() {
     MeterPerSec = KiloPerHour * 0.27778;
     printf("m/s = %.5f", MeterPerSec);
 
-    return 0;
 }

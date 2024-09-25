@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     float kilometers, yards;
 
     printf("Distance in kilometers: ");
@@ -8,5 +8,4 @@ int main() {
     yards = kilometers * 1093.61;
     printf("Distance in Yards = %.2f", yards);
 
-    return 0;
 }

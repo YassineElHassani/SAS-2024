@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     int length, width;
 
     printf("Enter the length: ");
@@ -10,6 +10,5 @@ int main() {
 
     int surface = length * width;
     printf("Formula for the area of a rectangle: %d", surface);
-    
-    return 0;
+
 }

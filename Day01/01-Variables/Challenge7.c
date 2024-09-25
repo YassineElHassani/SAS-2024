@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     int a,b,c;
 
     printf("Enter the first number: ");
@@ -18,5 +18,4 @@ int main() {
 
     printf("The weighted average of three numbers: %d", sum);
 
-    return 0;
 }

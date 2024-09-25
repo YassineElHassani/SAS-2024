@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     float celsius;
 
     printf("Celsius Temperature: ");
@@ -14,5 +14,4 @@ int main() {
         printf("This Temperature is Gas");
     }
 
-    return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
     float celsius, kelvin;
 
     printf("Celsius Temperature: ");
@@ -8,5 +8,4 @@ int main() {
     kelvin = celsius + 273.15;
     printf("Kelvin = %.2f", kelvin);
 
-    return 0;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+void main() {
     int a,b,c;
 
     printf("Enter the first number: ");
@@ -14,5 +14,4 @@ int main() {
     float x = pow(a * b * c, 1/3);
     printf("Moyenne geometric: %f", x);
 
-    return 0;
 }
