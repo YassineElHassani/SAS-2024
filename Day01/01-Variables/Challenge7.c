@@ -15,7 +15,8 @@ void main() {
     int sum3 = (c * 5.0);
 
     int sum = sum1 + sum2 + sum3;
+    int avrege = sum / 10.0;
 
-    printf("The weighted average of three numbers: %d", sum);
+    printf("The weighted average of three numbers: %d", avrege);
 
 }
