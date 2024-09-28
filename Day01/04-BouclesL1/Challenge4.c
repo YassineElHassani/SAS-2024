@@ -6,9 +6,10 @@ void main() {
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    for (int i = 1; i <= 10; i++) {
-        if (i % 2 != 0) {
-            printf("%d ", i);
+    for (int i = 1; i <= n; i++) {
+        printf("%d", (i * 2) + 1);
+        if (i < n) {
+            printf(", ");
         }
     }
 }
