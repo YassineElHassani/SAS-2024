@@ -1,35 +1,26 @@
 #include <stdio.h>
 
-void main() {
-    //int binaryValue;
-    //int hexdecimalValue;
-    //int remainder;
-    //int i = 1;
-
-    //printf("Enter the binary number: ");
-    //scanf("%d", &binaryValue);
-
-    //while (binaryValue != 0) {
-        //remainder = binaryValue % 10;
-        //hexdecimalValue = hexdecimalValue + remainder * i;
-        //i = i * 2;
-        //binaryValue = binaryValue / 10;
-    //}
-    //printf("Hexdecimal value: %lX", hexdecimalValue);
-
-    int number;
-    int count;
-    int remainder[] = {};
-
-    printf("Enter a number: ");
-    scanf("%d", &number);
-
-    for (int i = 0; number >= 0;i++) {
-        remainder[i] = number % 2;
-        number = number / 2;
-        count++;
-    }
-
-    printf("Binary value: %d", count);
+int main() {
+    int binaryNum[32];
+    int num;
     
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    printf("Hexadecimal: %X\n", num);
+    printf("Binary: ");
+    
+    int n = num;
+    int i = 0;
+    while (n > 0) {
+        binaryNum[i] = n % 2;
+        n = n / 2;
+        i++;
+    }
+    for (int j = i - 1; j >= 0; j--)
+        printf("%d", binaryNum[j]);
+    
+    printf("\n");
+
+    return 0;
 }
