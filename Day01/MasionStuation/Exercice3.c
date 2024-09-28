@@ -6,13 +6,15 @@ void main() {
     printf("Entree: ");
     scanf("%d", &n);
     
-    for (int i = 1; i <= n; i++) {
-        int verification = (n % i == 0);
+    for (int i = 2; i <= n; i++) {
+        if (n % i == 0) {
+            printf("Ce n'est pas un nombre premier\n");
+            break;
+        } else {
+            printf("C'est un nombre premier\n");
+            break;
+        }
     }
 
-    if (n % 2 && n - 1) {
-        printf("C'est un nombre premier\n");
-    } else {
-        printf("Ce n'est pas un nombre premier\n");
-    }
+    
 }
