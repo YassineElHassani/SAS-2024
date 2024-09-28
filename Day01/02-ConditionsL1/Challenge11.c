@@ -7,7 +7,7 @@ void main() {
     srand(time(NULL));  
     r = (rand()% 7 + 1);
 
-    char *days[] = {
+    char days[] = {
         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
     };
 

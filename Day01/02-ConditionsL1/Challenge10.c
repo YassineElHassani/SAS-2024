@@ -2,7 +2,7 @@
 
 void main() {
     int day, month, year;
-    char *months[] = {
+    char months[] = {
         "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
     };
 
