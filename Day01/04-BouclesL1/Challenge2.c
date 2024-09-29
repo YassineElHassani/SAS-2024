@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
     int n, factorial = 1;
 
     printf("Enter a number: ");
@@ -10,4 +10,5 @@ void main() {
         factorial = factorial * i;
     }
     printf("n = %d\n", factorial);
+    return factorial;
 }
