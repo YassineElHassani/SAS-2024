@@ -6,6 +6,7 @@
 // Define proto type
 void interface();
 void addToStock();
+void searchForBooks();
 void availableBooks();
 void updateQuantity();
 void removeBook();
