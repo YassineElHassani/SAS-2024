@@ -2,8 +2,21 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <string.h>
 
-// Define proto type
+// Define struct
+struct Book {
+    char title[100];
+    char author[100];
+    float price;
+    int quantity;
+};
+
+// Define table
+extern struct Book books[100];
+extern int book_table;
+
+// Function prototypes
 void interface();
 void addToStock();
 void searchForBooks();
