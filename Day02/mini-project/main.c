@@ -1,8 +1,11 @@
 #include "main.h"
 
+
+// Declaration of table
 struct Book books[100];
 int book_table = 0;
 
+// ASCII Art interface
 void interface() {
 
     printf("%s  _________ __                 __                _____                                                             __   \n", BLUE);
@@ -21,6 +24,7 @@ void interface() {
     
 }
 
+//Add a book to stock
 void addToStock() {
     if (book_table < 100) {
         printf("%s==> Enter the title of the book: ", YELLOW);
@@ -55,6 +59,7 @@ void addToStock() {
     }
 }
 
+//Show all available books
 void availableBooks() {
     if (book_table == 0) {
         printf("%s==> No books are available in the stock!%s\n", RED, RESET);
@@ -72,6 +77,7 @@ void availableBooks() {
     printf("-------------------------------------------------------------------------------------------------------------------------\n");
 }
 
+//Search for a book by its title
 void searchForBooks() {
     char search[100];
     int found = 0;
@@ -98,6 +104,7 @@ void searchForBooks() {
     printf("%s", RESET);
 }
 
+//Update the quantity of a book
 void updateQuantity() {
     char search[100];
     int found = 0;
@@ -126,6 +133,7 @@ void updateQuantity() {
     printf("%s", RESET);
 }
 
+//Remove a book from stock
 void removeBook() {
     char search[100];
     int found = 0;
@@ -159,7 +167,7 @@ void removeBook() {
     printf("%s", RESET);
 }
 
-
+//Show total number of books in stock
 void totalBooks() {
     int total_quantity = 0;
 
@@ -170,6 +178,7 @@ void totalBooks() {
     printf("%s==> The total number of books in stock: %d%s\n",YELLOW ,total_quantity, RESET);
 }
 
+//Main fonction
 void main() {
     int choice;
 
