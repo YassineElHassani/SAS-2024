@@ -6,18 +6,21 @@ void main() {
     scanf("%d", &numberOfElement);
 
     int arr1[numberOfElement];
-    printf("Enter the %d elements of table1 below\n", numberOfElement);
+
     for(int i = 0; i < numberOfElement; i++) {
+        printf("Enter the elements of table1: ");
         scanf("%d", &arr1[i]);
     }
 
     int arr2[numberOfElement];
-    printf("Enter the %d elements of table2 below\n", numberOfElement);
+
     for(int i = 0; i < numberOfElement; i++) {
+        printf("Enter the elements of table2: ");
         scanf("%d", &arr2[i]);
     }
 
     int arr3[numberOfElement];
+    
     for(int i = 0; i < numberOfElement; i++) {
         arr3[i] = arr1[i] + arr2[i];
     }

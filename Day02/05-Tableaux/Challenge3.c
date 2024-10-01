@@ -1,21 +1,22 @@
 #include <stdio.h>
 
 void main() {
-    int numberOfElements, sum;
+    int numberOfElements, i, sum;
     printf("Enter the number of elements: ");
     scanf("%d", &numberOfElements);
 
     int arr[numberOfElements];
 
-    printf("Enter the %d elements below\n", numberOfElements);
-    for(int i = 0; i < numberOfElements; i++) {
+    for(i = 0; i < numberOfElements; i++) {
+        printf("Enter the elements: ");
         scanf("%d", &arr[i]);
     }
-
-    for(int i = 1; i <= numberOfElements; i++) {
-        sum = sum + i;
-        printf("%d", i);
-        if (i < numberOfElements) {
+    
+    sum = 0;
+    for(i = 0; i < numberOfElements; i++) {
+        printf("%d", arr[i]);
+        sum += arr[i];
+        if (i < numberOfElements - 1) {
             printf(" + ");
         }
     }

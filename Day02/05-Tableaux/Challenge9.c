@@ -6,8 +6,9 @@ void main() {
     scanf("%d", &n);
 
     int arr[n];
-    printf("Enter nembers below\n");
+
     for(int i = 0; i < n; i++) {
+        printf("Enter nembers: ");
         scanf("%d", &arr[i]);
     }
 
