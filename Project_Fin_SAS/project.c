@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #define DEFAULT   "\033[0m"
 #define CYAN    "\033[36m"
 #define RED     "\033[31m"
@@ -26,16 +25,8 @@ struct Info {
 };
 
 struct Info info[100];
-int size = 0;
+int size = 10;
 int uniqueCounter = 0;
-
-void clearScreen() {
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
-}
 
 void addReservation() {
     if(size < 100) {
@@ -71,9 +62,6 @@ void addReservation() {
     } else {
         printf("%sStorage full cannot add more reservations.%s\n\n", RED, DEFAULT);
     }
-    printf("Press enter to continue");
-    getchar();
-    getchar();
 }
 
 void reservationSettings() {
@@ -118,9 +106,6 @@ void reservationSettings() {
     if (!found) {
         printf("%sNo reservation found with that name.%s\n\n", RED, DEFAULT);
     }
-    printf("Press enter to continue");
-    getchar();
-    getchar();
 }
 
 void showReservation() {
@@ -140,9 +125,6 @@ void showReservation() {
     }
 
     printf("---------------------------------------------------------------------------------------------------%s\n\n", DEFAULT);
-    printf("Press enter to continue");
-    getchar();
-    getchar();
 }
 
 void reservationTri() {
@@ -168,7 +150,7 @@ void reservationTri() {
                 strcpy(info[j].lName, sort);
             }
         }
-        printf("|  %-26s |  %-26s |\n", info[i].lName, info[i].status);
+        printf("|  %-26s |  %-26s |\n", info[i].lName, info[size].status);
         }
 
         printf("-------------------------------------------------------------\n");
@@ -188,15 +170,12 @@ void reservationTri() {
                 strcpy(info[j].status, sort);
             }
         }
-        printf("|  %-26s |  %-26s |\n", info[i].status, info[i].lName);
+        printf("|  %-26s |  %-26s |\n", info[i].status, info[size].lName);
         }
 
         printf("-----------------------------------------------------------%s\n", DEFAULT);
     }
     printf("\n\n");
-    printf("Press enter to continue");
-    getchar();
-    getchar();
 }
 
 void searchReservation() {
@@ -232,7 +211,7 @@ void searchReservation() {
         scanf("%d", &searchReferance);
 
         for(int i = 0; i < size; i++) {
-            if(info[size].uniqueRef == searchReferance) {
+            if(info[i].uniqueRef == searchReferance) {
                 found = 1;
                 printf("\n%sReservation found!%s\n\n", GREEN, DEFAULT);
 
@@ -250,9 +229,6 @@ void searchReservation() {
     if (!found) {
         printf("\n%sNo reservation found!%s\n\n", RED, DEFAULT);
     }
-    printf("Press enter to continue");
-    getchar();
-    getchar();
 }
 
 void statistic() {
@@ -285,7 +261,7 @@ void statistic() {
         printf("\n%sAverage age: %.2f\n\n", CYAN, (float)totalAge / size);
     }
 
-    printf("-----------------------------------------------------------\n");
+    printf("%s-----------------------------------------------------------\n", CYAN);
     printf("|                Reservation Statistics                   |\n");
     printf("-----------------------------------------------------------\n");
     printf("| Age Group                |     Count                    |\n");
@@ -300,27 +276,24 @@ void statistic() {
     printf("-----------------------------------------------------------\n");
     printf("| Valid                    |     %-24d |\n", valid);
     printf("| Canceled                 |     %-24d |\n", cancel);
-    printf("| postponeed                |     %-24d |\n", postpone);
+    printf("| postponed                |     %-24d |\n", postpone);
     printf("| In Process               |     %-24d |\n", process);
     printf("-----------------------------------------------------------%s\n\n", DEFAULT);
-    printf("Press enter to continue");
-    getchar();
-    getchar();
 }
 
 void main() {
     int choice;
 
-    //info[0] = (struct Info){{04, 10, 2024}, "yassine", "el marnissi", "valid", 678987654, 25, 91};
-    //info[1] = (struct Info){{25, 04, 2024}, "amine", "choon", "valid", 623845961, 12, 92};
-    //info[2] = (struct Info){{15, 02, 2024}, "reda", "monir", "valid", 674265812, 7, 93};
-    //info[3] = (struct Info){{22, 11, 2024}, "hind", "soufi", "cancel", 754963225, 36, 94};
-    //info[4] = (struct Info){{23, 07, 2024}, "monir", "rachaad", "postpone", 664825576, 27, 95};
-    //info[5] = (struct Info){{12, 12, 2024}, "soumia", "anib", "postpone", 714852354, 64, 96};
-    //info[6] = (struct Info){{18, 03, 2024}, "rachida", "ben kader", "process", 698456758, 38, 97};
-    //info[7] = (struct Info){{19, 07, 2024}, "hamid", "al mouhamadi", "cancel", 695135785, 46, 98};
-    //info[8] = (struct Info){{07, 11, 2024}, "kholoud", "zanir", "process", 636145879, 43, 99};
-    //info[9] = (struct Info){{16, 05, 2024}, "zinb", "idrissi", "valid", 696584236, 17, 100};
+    info[0] = (struct Info){{04, 10, 2024}, "yassine", "el marnissi", "valid", 678987654, 25, 91};
+    info[1] = (struct Info){{25, 04, 2024}, "amine", "choon", "valid", 623845961, 12, 92};
+    info[2] = (struct Info){{15, 02, 2024}, "reda", "monir", "valid", 674265812, 7, 93};
+    info[3] = (struct Info){{22, 11, 2024}, "hind", "soufi", "cancel", 754963225, 36, 94};
+    info[4] = (struct Info){{23, 07, 2024}, "monir", "rachaad", "postpone", 664825576, 27, 95};
+    info[5] = (struct Info){{12, 12, 2024}, "soumia", "anib", "postpone", 714852354, 64, 96};
+    info[6] = (struct Info){{18, 03, 2024}, "rachida", "ben kader", "process", 698456758, 38, 97};
+    info[7] = (struct Info){{19, 07, 2024}, "hamid", "al mouhamadi", "cancel", 695135785, 46, 98};
+    info[8] = (struct Info){{07, 11, 2024}, "kholoud", "zanir", "process", 636145879, 43, 99};
+    info[9] = (struct Info){{16, 05, 2024}, "zinb", "idrissi", "valid", 696584236, 17, 100};
 
 
     while(1) {
@@ -349,27 +322,21 @@ void main() {
         switch(choice) {
             case 1:
                 addReservation();
-                clearScreen();
                 break;
             case 2:
                 reservationSettings();
-                clearScreen();
                 break;
             case 3:
                 showReservation();
-                clearScreen();
                 break;
             case 4:
                 reservationTri();
-                clearScreen();
                 break;
             case 5:
                 searchReservation();
-                clearScreen();
                 break;
             case 6:
                 statistic();
-                clearScreen();
                 break;
             case 7:
                 printf("%sExiting the program.%s\n\n", GREEN, DEFAULT);
