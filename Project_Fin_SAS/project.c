@@ -150,12 +150,12 @@ void reservationTri() {
                 strcpy(info[j].lName, sort);
             }
         }
-        printf("|  %-26s |  %-26s |\n", info[i].lName, info[size].status);
+        printf("|  %-26s |  %-26s |\n", info[i].lName, info[i].status);
         }
 
-        printf("-------------------------------------------------------------\n");
+        printf("-------------------------------------------------------------%s\n", DEFAULT);
     } else if(choice == 2) {
-        printf("-------------------------------------------------------------\n");
+        printf("%s-------------------------------------------------------------\n", CYAN);
         printf("|                     Sort reservations                     |\n");
         printf("-------------------------------------------------------------\n");
         printf("|           Status            |          Last Name          |\n");
@@ -170,10 +170,10 @@ void reservationTri() {
                 strcpy(info[j].status, sort);
             }
         }
-        printf("|  %-26s |  %-26s |\n", info[i].status, info[size].lName);
+        printf("|  %-26s |  %-26s |\n", info[i].status, info[i].lName);
         }
 
-        printf("-----------------------------------------------------------%s\n", DEFAULT);
+        printf("-------------------------------------------------------------%s\n", DEFAULT);
     }
     printf("\n\n");
 }
@@ -238,9 +238,9 @@ void statistic() {
     for (int i = 0; i < size; i++) {
         totalAge += info[i].age;
 
-        if (info[i].age <= 18) {
+        if (info[i].age >= 0 && info[i].age <= 18) {
             ageGroups[0]++;
-        } else if (info[i].age <= 35) {
+        } else if (info[i].age >= 19 && info[i].age <= 35) {
             ageGroups[1]++;
         } else {
             ageGroups[2]++;
@@ -269,12 +269,10 @@ void statistic() {
     printf("| 0-18 years old           |     %-24d |\n", ageGroups[0]);
     printf("| 19-35 years old          |     %-24d |\n", ageGroups[1]);
     printf("| 36+ years old            |     %-24d |\n", ageGroups[2]);
-    printf("-----------------------------------------------------------\n\n");
-
     printf("-----------------------------------------------------------\n");
     printf("| Reservation Status       |     Count                    |\n");
     printf("-----------------------------------------------------------\n");
-    printf("| Valid                    |     %-24d |\n", valid);
+    printf("| validated                |     %-24d |\n", valid);
     printf("| Canceled                 |     %-24d |\n", cancel);
     printf("| postponed                |     %-24d |\n", postpone);
     printf("| In Process               |     %-24d |\n", process);
@@ -304,7 +302,7 @@ void main() {
         printf(" ___   ____  __   ____  ___   _       __   _____  _   ___   _    \n");
         printf("| |_) | |_  ( (` | |_  | |_) \\ \\  /  / /\\   | |  | | / / \\ | |\\ |\n");
         printf("|_| \\ |_|__ _)_) |_|__ |_| \\  \\_\\/  /_/--\\  |_|  |_| \\_\\_/ |_| \\|%s\n\n", DEFAULT);
-        printf("%s--------------------------------------------------------------------\n", CYAN);
+        printf("--------------------------------------------------------------------\n");
         printf("|                        Reservation Menu                          |\n");
         printf("--------------------------------------------------------------------\n");
         printf("| 1 | Add a reservation                                            |\n");
@@ -314,7 +312,7 @@ void main() {
         printf("| 5 | Search for reservations                                      |\n");
         printf("| 6 | Statistics                                                   |\n");
         printf("| 7 | Exit                                                         |\n");
-        printf("--------------------------------------------------------------------%s\n", DEFAULT);
+        printf("--------------------------------------------------------------------\n");
 
         printf("%s==> Enter your choice: %s", YELLOW, DEFAULT);
         scanf("%d", &choice);
